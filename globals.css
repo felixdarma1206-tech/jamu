@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #180a03;
+  --foreground: #fef8ee;
+  --primary-gold: #f59e0b;
+  --warm-amber: #d97706;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #180a03;
+  color: #fdf6ec;
+  font-family: 'Outfit', sans-serif;
+  overflow-x: clip; /* clip does not break position: sticky, unlike overflow-x: hidden */
+  letter-spacing: -0.02em;
+  scroll-behavior: auto; /* Managed by Lenis */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #120601;
+}
+::-webkit-scrollbar-thumb {
+  background: #78350f;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b45309;
+}
+
+/* Text selection */
+::selection {
+  background-color: #f59e0b;
+  color: #180a03;
+}
+
+/* Noise texture effect for tactile craft feel */
+.bg-noise {
+  background-image: radial-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Gold gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 40%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(135deg, #fef3c7 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtle glow for herbal bottle atmosphere */
+.glow-gold {
+  box-shadow: 0 0 50px -10px rgba(245, 158, 11, 0.3);
+}
+
+.glow-amber {
+  box-shadow: 0 0 80px -15px rgba(217, 119, 6, 0.4);
+}
+
+/* Lenis recommended css */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
